@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Historial de chollos · Amazon España</title>
+<style>
+:root{--bg:#0e141b;--panel:#161f2b;--panel2:#1d2836;--line:#26374a;--tx:#e9eff5;--mut:#8fa2b6;--save:#2fbf71;--gold:#ffb020}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:26px 18px 60px}
+header h1{margin:0 0 6px;font-size:24px;letter-spacing:-.02em}
+header h1 .es{color:var(--save)}
+.sub{color:var(--mut);font-size:13px}
+.sub b{color:var(--tx)}
+.controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:18px 0;padding:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px}
+.controls input,.controls select{background:var(--panel2);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px}
+.controls input[type=search]{flex:1;min-width:160px}
+.chk{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--mut);cursor:pointer;user-select:none}
+.chk input{width:16px;height:16px;accent-color:var(--save)}
+#n{font-size:13px;color:var(--mut);margin-left:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .12s,border-color .12s}
+.card:hover{transform:translateY(-3px);border-color:var(--save)}
+.thumb{background:#fff;height:160px;display:flex;align-items:center;justify-content:center;padding:10px;position:relative}
+.thumb img{max-width:100%;max-height:100%;object-fit:contain}
+.tag-cat{position:absolute;top:8px;left:8px;background:rgba(13,20,28,.82);color:#cbd6e2;font-size:10px;padding:3px 7px;border-radius:6px}
+.badge{position:absolute;top:8px;right:8px;font-weight:800;font-size:13px;padding:3px 8px;border-radius:7px}
+.badge.top{background:var(--save);color:#04210f}
+.badge.mid{background:var(--gold);color:#3a2600}
+.body{padding:11px 12px 13px;display:flex;flex-direction:column;gap:7px;flex:1}
+.title{font-size:13px;line-height:1.34;color:var(--tx);text-decoration:none;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-height:52px}
+.title:hover{color:var(--save)}
+.row{display:flex;align-items:baseline;gap:8px;margin-top:auto}
+.price{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:18px;font-weight:700}
+.store{font-size:11px;color:var(--mut)}
+.date{font-size:10px;color:var(--mut)}
+.empty{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:40px;text-align:center;color:var(--mut)}
+.foot{margin-top:30px;color:var(--mut);font-size:12px;line-height:1.7;border-top:1px solid var(--line);padding-top:16px}
+</style></head><body>
+<div class="wrap">
+  <header>
+    <h1>🎯 Historial de chollos · <span class="es">Amazon España</span></h1>
+    <div class="sub">Fuente: Chollometro · Actualizado: <b>07/08/2026 22:03</b> ·
+      <b>20</b> ofertas guardadas · <b>0</b> con % detectado ·
+      <b>0</b> con ≥50% detectado</div>
+  </header>
+
+  <div class="controls">
+    <input type="search" id="q" placeholder="Buscar producto...">
+    <select id="cat"><option value="">Todas las categorías</option></select>
+    <select id="sort">
+      <option value="fecha">Más recientes</option>
+      <option value="precio_asc">Precio: menor a mayor</option>
+      <option value="precio_desc">Precio: mayor a menor</option>
+      <option value="desc_desc">Mayor % detectado</option>
+    </select>
+    <label class="chk"><input type="checkbox" id="only"> Solo ≥50% detectado</label>
+    <span id="n"></span>
+  </div>
+
+  <div id="grid" class="grid"></div>
+
+  <div class="foot">
+    Datos de Chollometro (ofertas publicadas por su comunidad). El % solo se muestra
+    cuando la propia oferta lo indica; el precio de referencia real no viene en el feed.
+    Comprueba siempre el precio final en la tienda antes de comprar.
+  </div>
+</div>
+
+<script>
+const DATA = [{"id": "https://www.chollometro.com/ofertas/x2-total-18-unidades-aquarius-limon-bebida-hidratante-con-sales-minerales-baja-en-calorias-9-x-330-ml-1969138", "titulo": "X2. (Total 18 unidades) AQUARIUS Limón, Bebida Hidratante con Sales Minerales, Baja en Calorías, 9 x 330 ml", "tienda": "Amazon", "precio_txt": "11,61€", "precio_num": 11.61, "descuento": null, "categoria": "Supermercado y alimentación", "enlace": "https://www.chollometro.com/ofertas/x2-total-18-unidades-aquarius-limon-bebida-hidratante-con-sales-minerales-baja-en-calorias-9-x-330-ml-1969138", "imagen": "https://static.chollometro.com/threads/raw/wMmsC/1969138_1/re/150x150/qt/55/1969138_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:58:34 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/corsair-icue-link-titan-360-rx-refrigerador-liquido-rgb-para-cpu-360mm-aio-3x-rx120-ventiladores-rgb-incluidos-1969133", "titulo": "CORSAIR iCUE Link Titan 360 RX Refrigerador Líquido RGB para CPU – 360mm AIO – 3X RX120 Ventiladores RGB Incluidos", "tienda": "Amazon", "precio_txt": "129,70€", "precio_num": 129.7, "descuento": null, "categoria": "Electrónica", "enlace": "https://www.chollometro.com/ofertas/corsair-icue-link-titan-360-rx-refrigerador-liquido-rgb-para-cpu-360mm-aio-3x-rx120-ventiladores-rgb-incluidos-1969133", "imagen": "https://static.chollometro.com/threads/raw/iDMLa/1969133_1/re/150x150/qt/55/1969133_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:54:47 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/correas-de-amarre-1969129", "titulo": "FORTEM Set de 4 Correas de Amarre con Tensor de Trinquete, ganchos y hebillas", "tienda": "Amazon", "precio_txt": "24,64€", "precio_num": 24.64, "descuento": null, "categoria": "Jardín y bricolaje", "enlace": "https://www.chollometro.com/ofertas/correas-de-amarre-1969129", "imagen": "https://static.chollometro.com/threads/raw/kQdsR/1969129_1/re/150x150/qt/55/1969129_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:48:15 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/camiseta-nike-m-nsw-club-tee-camiseta-hombre-en-varias-tallas-1969127", "titulo": "Camiseta Nike M NSW Club tee Camiseta Hombre, en varias tallas", "tienda": "Amazon", "precio_txt": "17,49€", "precio_num": 17.49, "descuento": null, "categoria": "Moda y accesorios", "enlace": "https://www.chollometro.com/ofertas/camiseta-nike-m-nsw-club-tee-camiseta-hombre-en-varias-tallas-1969127", "imagen": "https://static.chollometro.com/threads/raw/66Gn7/1969127_1/re/150x150/qt/55/1969127_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:46:49 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/album-portatarjetas-para-240-cartas-estandar-1969125", "titulo": "Álbum portatarjetas para 240 cartas estándar", "tienda": "Amazon", "precio_txt": "7,99€", "precio_num": 7.99, "descuento": null, "categoria": "Cine, libros, cultura y ocio", "enlace": "https://www.chollometro.com/ofertas/album-portatarjetas-para-240-cartas-estandar-1969125", "imagen": "https://static.chollometro.com/threads/raw/ZZxDY/1969125_1/re/150x150/qt/55/1969125_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:46:18 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/loreal-paris-hyaluron-serum-revitalift-filler-anti-aging-cuidado-facial-antiarrugas-con-15-de-acido-hialuronico-y-vitamina-c-30-ml-1969120", "titulo": "L'Oréal Paris Hyaluron Serum, Revitalift Filler, Anti-Aging cuidado facial antiarrugas, con 1,5% de ácido hialurónico y vitamina C, 30 ml", "tienda": "Amazon", "precio_txt": "8,60€", "precio_num": 8.6, "descuento": null, "categoria": "Salud y belleza", "enlace": "https://www.chollometro.com/ofertas/loreal-paris-hyaluron-serum-revitalift-filler-anti-aging-cuidado-facial-antiarrugas-con-15-de-acido-hialuronico-y-vitamina-c-30-ml-1969120", "imagen": "https://static.chollometro.com/threads/raw/CGaE1/1969120_1/re/150x150/qt/55/1969120_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:37:20 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/mancuerna-ajustable-5-15-1969113", "titulo": "Mancuerna Ajustable 5-15", "tienda": "Amazon", "precio_txt": "79,99€", "precio_num": 79.99, "descuento": null, "categoria": "Deportes y aire libre", "enlace": "https://www.chollometro.com/ofertas/mancuerna-ajustable-5-15-1969113", "imagen": "https://static.chollometro.com/threads/raw/GWbbX/1969113_1/re/150x150/qt/55/1969113_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:19:46 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/cuetara-surtido-el-autentico-surtido-de-galletas-420-gr-precio-final-con-recompensa-284eur-1969112", "titulo": "Cuetara Surtido El Auténtico Surtido de Galletas - 420 gr (Precio Final Con Recompensa 2,84€)", "tienda": "Amazon", "precio_txt": "5,49€", "precio_num": 5.49, "descuento": null, "categoria": "Supermercado y alimentación", "enlace": "https://www.chollometro.com/ofertas/cuetara-surtido-el-autentico-surtido-de-galletas-420-gr-precio-final-con-recompensa-284eur-1969112", "imagen": "https://static.chollometro.com/threads/raw/I0kmV/1969112_1/re/150x150/qt/55/1969112_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:15:24 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/arrr-mada-juego-de-mesa-de-memoria-y-estrategia-mas-6-anos-1969111", "titulo": "ARRR-Mada, Juego de Mesa de Memoria y Estrategia. Más 6 años", "tienda": "Amazon", "precio_txt": "7,40€", "precio_num": 7.4, "descuento": null, "categoria": "Juguetes, familia e hijos", "enlace": "https://www.chollometro.com/ofertas/arrr-mada-juego-de-mesa-de-memoria-y-estrategia-mas-6-anos-1969111", "imagen": "https://static.chollometro.com/threads/raw/yvRtF/1969111_1/re/150x150/qt/55/1969111_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:10:07 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/flintronic-reloj-despertador-digital-pantalla-led-inteligente-usbbateria-con-tiempotemperaturafecha-snooze-brillo-ajustable1224h-1969109", "titulo": "flintronic Reloj Despertador Digital Pantalla LED Inteligente, USB/Batería, con Tiempo,Temperatura,Fecha, Snooze, Brillo Ajustable,12/24h", "tienda": "Amazon", "precio_txt": "8,69€", "precio_num": 8.69, "descuento": null, "categoria": "Hogar, vivienda y oficina", "enlace": "https://www.chollometro.com/ofertas/flintronic-reloj-despertador-digital-pantalla-led-inteligente-usbbateria-con-tiempotemperaturafecha-snooze-brillo-ajustable1224h-1969109", "imagen": "https://static.chollometro.com/threads/raw/3tmDy/1969109_1/re/150x150/qt/55/1969109_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:09:38 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/canasta-sonora-para-papelera-1969108", "titulo": "Canasta Sonora para Papelera", "tienda": "Amazon", "precio_txt": "7,98€", "precio_num": 7.98, "descuento": null, "categoria": "Hogar, vivienda y oficina", "enlace": "https://www.chollometro.com/ofertas/canasta-sonora-para-papelera-1969108", "imagen": "https://static.chollometro.com/threads/raw/NwzCi/1969108_1/re/150x150/qt/55/1969108_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:08:09 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/garnier-skin-active-agua-micelar-pack-de-2-1969102", "titulo": "Garnier skin active agua micelar, pack de 2", "tienda": "Amazon", "precio_txt": "6,99€", "precio_num": 6.99, "descuento": null, "categoria": "Salud y belleza", "enlace": "https://www.chollometro.com/ofertas/garnier-skin-active-agua-micelar-pack-de-2-1969102", "imagen": "https://static.chollometro.com/threads/raw/OgSIy/1969102_1/re/150x150/qt/55/1969102_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 23:00:32 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/newyes-portadocumentos-de-cuero-a4-para-conferencias-con-cremallera-negro-1969101", "titulo": "NEWYES Portadocumentos de Cuero A4 para Conferencias con Cremallera, Negro", "tienda": "Amazon", "precio_txt": "14,69€", "precio_num": 14.69, "descuento": null, "categoria": "Hogar, vivienda y oficina", "enlace": "https://www.chollometro.com/ofertas/newyes-portadocumentos-de-cuero-a4-para-conferencias-con-cremallera-negro-1969101", "imagen": "https://static.chollometro.com/threads/raw/nHsGY/1969101_1/re/150x150/qt/55/1969101_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:55:44 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/mattel-disney-pack-figuras-peter-pan-y-wendy-1969095", "titulo": "Mattel Disney - Pack figuras Peter Pan y Wendy", "tienda": "Amazon", "precio_txt": "9,50€", "precio_num": 9.5, "descuento": null, "categoria": "Juguetes, familia e hijos", "enlace": "https://www.chollometro.com/ofertas/mattel-disney-pack-figuras-peter-pan-y-wendy-1969095", "imagen": "https://static.chollometro.com/threads/raw/ZMPIT/1969095_1/re/150x150/qt/55/1969095_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:55:10 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/reloj-timex-standard-x-peanuts-1969098", "titulo": "Reloj Timex Standard x Peanuts", "tienda": "Amazon", "precio_txt": "55,12€", "precio_num": 55.12, "descuento": null, "categoria": "Moda y accesorios", "enlace": "https://www.chollometro.com/ofertas/reloj-timex-standard-x-peanuts-1969098", "imagen": "https://static.chollometro.com/threads/raw/g2VXE/1969098_1/re/150x150/qt/55/1969098_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:48:02 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/bonangel-calcetines-funky-para-hombre-calcetines-navidenos-hombre-39-46-1969096", "titulo": "BONANGEL Calcetines Funky para Hombre, Calcetines Navideños Hombre 39-46", "tienda": "Amazon", "precio_txt": "7,74€", "precio_num": 7.74, "descuento": null, "categoria": "Moda y accesorios", "enlace": "https://www.chollometro.com/ofertas/bonangel-calcetines-funky-para-hombre-calcetines-navidenos-hombre-39-46-1969096", "imagen": "https://static.chollometro.com/threads/raw/W6jcR/1969096_1/re/150x150/qt/55/1969096_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:46:17 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/mam-chupete-air-para-bebes-2-6-meses-azul-mate-2-uds-1969092", "titulo": "MAM Chupete Air para Bebés 2-6 Meses, Azul Mate, 2 uds", "tienda": "Amazon", "precio_txt": "8,79€", "precio_num": 8.79, "descuento": null, "categoria": "Juguetes, familia e hijos", "enlace": "https://www.chollometro.com/ofertas/mam-chupete-air-para-bebes-2-6-meses-azul-mate-2-uds-1969092", "imagen": "https://static.chollometro.com/threads/raw/LGEcg/1969092_1/re/150x150/qt/55/1969092_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:39:19 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/proyector-portatil-1080p-nativonetflix-readytv-directoapp-integrada-auto-focuskeystone-con-hdr10-giro-330-wifi-bluetooth-1969090", "titulo": "Proyector Portatil 1080P Nativo【Netflix Ready+TV Directo】App Integrada / Auto Focus/Keystone, con HDR10, Giro 330°, WiFi, Bluetooth", "tienda": "Amazon", "precio_txt": "162,90€", "precio_num": 162.9, "descuento": null, "categoria": "Electrónica", "enlace": "https://www.chollometro.com/ofertas/proyector-portatil-1080p-nativonetflix-readytv-directoapp-integrada-auto-focuskeystone-con-hdr10-giro-330-wifi-bluetooth-1969090", "imagen": "https://static.chollometro.com/threads/raw/wcf4J/1969090_1/re/150x150/qt/55/1969090_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:27:30 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/cd-ellie-goulding-delirium-1969086", "titulo": "CD Ellie Goulding - Delirium", "tienda": "Amazon", "precio_txt": "6,30€", "precio_num": 6.3, "descuento": null, "categoria": "Cine, libros, cultura y ocio", "enlace": "https://www.chollometro.com/ofertas/cd-ellie-goulding-delirium-1969086", "imagen": "https://static.chollometro.com/threads/raw/DQgvn/1969086_1/re/150x150/qt/55/1969086_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:24:25 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}, {"id": "https://www.chollometro.com/ofertas/disfraz-de-tematica-india-para-mujer-1969083", "titulo": "Disfraz de temática india para mujer", "tienda": "Amazon", "precio_txt": "14,62€", "precio_num": 14.62, "descuento": null, "categoria": "Moda y accesorios", "enlace": "https://www.chollometro.com/ofertas/disfraz-de-tematica-india-para-mujer-1969083", "imagen": "https://static.chollometro.com/threads/raw/UpQkn/1969083_1/re/150x150/qt/55/1969083_1.jpg", "fecha_pub": "Fri, 07 Aug 2026 22:12:47 +0200", "fuente": "Chollometro", "primera_vez": "2026-08-07T22:03:45"}];
+const CATS = ["Cine, libros, cultura y ocio", "Deportes y aire libre", "Electrónica", "Hogar, vivienda y oficina", "Jardín y bricolaje", "Juguetes, familia e hijos", "Moda y accesorios", "Salud y belleza", "Supermercado y alimentación"];
+const UMBRAL = 50;
+
+const grid = document.getElementById('grid');
+const q = document.getElementById('q');
+const cat = document.getElementById('cat');
+const sort = document.getElementById('sort');
+const only = document.getElementById('only');
+const n = document.getElementById('n');
+
+CATS.forEach(c => { const o=document.createElement('option'); o.value=c; o.textContent=c; cat.appendChild(o); });
+
+function esc(s){ return (s||'').replace(/[&<>"]/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m])); }
+
+function card(o){
+  const badge = o.descuento!=null
+    ? `<span class="badge ${o.descuento>=UMBRAL?'top':'mid'}">-${o.descuento}%</span>` : '';
+  const img = o.imagen
+    ? `<img src="${esc(o.imagen)}" alt="" loading="lazy" onerror="this.style.display='none'">` : '';
+  const precio = o.precio_txt ? esc(o.precio_txt) : '—';
+  return `<article class="card">
+    <div class="thumb"><span class="tag-cat">${esc(o.categoria)}</span>${badge}${img}</div>
+    <div class="body">
+      <a class="title" href="${esc(o.enlace)}" target="_blank" rel="noopener">${esc(o.titulo)}</a>
+      <div class="row"><span class="price">${precio}</span><span class="store">${esc(o.tienda)}</span></div>
+      <span class="date">Visto: ${esc((o.primera_vez||'').replace('T',' ').slice(0,16))}</span>
+    </div>
+  </article>`;
+}
+
+function render(){
+  const term = q.value.trim().toLowerCase();
+  const c = cat.value;
+  let items = DATA.filter(o => {
+    if (only.checked && !(o.descuento!=null && o.descuento>=UMBRAL)) return false;
+    if (c && o.categoria!==c) return false;
+    if (term && !(o.titulo||'').toLowerCase().includes(term)) return false;
+    return true;
+  });
+  const s = sort.value;
+  items.sort((a,b)=>{
+    if(s==='precio_asc') return (a.precio_num??1e12)-(b.precio_num??1e12);
+    if(s==='precio_desc') return (b.precio_num??-1)-(a.precio_num??-1);
+    if(s==='desc_desc') return (b.descuento??-1)-(a.descuento??-1);
+    return (b.primera_vez||'').localeCompare(a.primera_vez||'');
+  });
+  n.textContent = items.length + ' resultado(s)';
+  grid.innerHTML = items.length ? items.map(card).join('')
+    : '<div class="empty">No hay ofertas con estos filtros.</div>';
+}
+
+[q,cat,sort,only].forEach(el => el.addEventListener('input', render));
+render();
+</script>
+</body></html>
