@@ -42,7 +42,7 @@ INCLUIR_AMAZON_EXTRANJERO = False   # True = incluir Amazon.de/.fr/.it, etc.
 
 UMBRAL_DESCUENTO = 50         # % para marcar/filtrar como "chollo top"
 SOLO_CON_DESCUENTO = False    # True = guardar SOLO ofertas con % detectado >= UMBRAL
-MAX_ITEMS = 4000              # tope del historial (para no inflar el HTML)
+MAX_ITEMS = 500               # tope del historial: se quedan las 500 más recientes
 
 HIST_FILE = "historial_chollos.json"
 HTML_OUT  = "index.html"
@@ -108,6 +108,24 @@ def tienda_valida(nombre):
     return False
 
 
+# Detecta componentes de PC por el nombre (Chollometro no tiene esa categoría).
+RE_COMPONENTE = re.compile(
+    r"tarjeta\s+gr[áa]fica|geforce|radeon|nvidia|\brtx\b|\bgtx\b|\brx\s?\d{3,4}\b|"
+    r"\bryzen\b|threadripper|intel\s+core|\bcore\s+i[3579]\b|\bi[3579]-\d{3,5}|"
+    r"placa\s+base|placa\s+madre|motherboard|"
+    r"\bddr[45]\b|memoria\s+ram|"
+    r"\bssd\b|\bnvme\b|\bm\.2\b|disco\s+duro|\bhdd\b|disco\s+s[óo]lido|"
+    r"fuente\s+de\s+alimentaci[óo]n|\bpsu\b|"
+    r"disipador|refrigeraci[óo]n\s+l[íi]quida|"
+    r"caja\s+pc|torre\s+pc|chasis|gabinete",
+    re.IGNORECASE,
+)
+
+
+def es_componente(titulo):
+    return bool(RE_COMPONENTE.search(titulo or ""))
+
+
 def parse_feed(xml_text, fuente="Chollometro"):
     """Devuelve lista de ofertas (dicts) desde el texto XML de un RSS de Chollometro."""
     root = ET.fromstring(xml_text)
@@ -131,6 +149,7 @@ def parse_feed(xml_text, fuente="Chollometro"):
             "precio_txt": precio_txt,
             "precio_num": precio_a_numero(precio_txt),
             "descuento": extraer_descuento(titulo, descripcion),
+            "componente": es_componente(titulo),
             "categoria": (item.findtext("category") or "Otros").strip(),
             "enlace": (item.findtext("link") or "").strip(),
             "imagen": imagen,
@@ -201,6 +220,10 @@ def main():
                 oferta["primera_vez"] = ahora
                 hist[oid] = oferta
                 nuevas += 1
+
+    # Reclasifica componentes en TODO el historial (también en lo ya guardado)
+    for o in hist.values():
+        o["componente"] = es_componente(o.get("titulo", ""))
 
     hist = guardar_historial(hist)
     with open(HTML_OUT, "w", encoding="utf-8") as f:
@@ -293,6 +316,7 @@ const sort = document.getElementById('sort');
 const only = document.getElementById('only');
 const n = document.getElementById('n');
 
+const optPC=document.createElement('option'); optPC.value='__pc__'; optPC.textContent='🖥️ PC Componentes'; cat.appendChild(optPC);
 CATS.forEach(c => {{ const o=document.createElement('option'); o.value=c; o.textContent=c; cat.appendChild(o); }});
 
 function esc(s){{ return (s||'').replace(/[&<>"]/g, m=>({{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}}[m])); }}
@@ -318,7 +342,8 @@ function render(){{
   const c = cat.value;
   let items = DATA.filter(o => {{
     if (only.checked && !(o.descuento!=null && o.descuento>=UMBRAL)) return false;
-    if (c && o.categoria!==c) return false;
+    if (c === '__pc__' && !o.componente) return false;
+    if (c && c !== '__pc__' && o.categoria!==c) return false;
     if (term && !(o.titulo||'').toLowerCase().includes(term)) return false;
     return true;
   }});
