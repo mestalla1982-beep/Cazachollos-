@@ -1,4 +1,19 @@
 {
+ "https://www.chollometro.com/ofertas/pack-de-9-snacks-variados-lays-doritos-ruffles-cheetos-por-solo-1074eur-menos-de-120eur-la-bolsa-2011035": {
+  "id": "https://www.chollometro.com/ofertas/pack-de-9-snacks-variados-lays-doritos-ruffles-cheetos-por-solo-1074eur-menos-de-120eur-la-bolsa-2011035",
+  "titulo": "Pack de 9 Snacks Variados (Lay's, Doritos, Ruffles, Cheetos...) por solo 10,74€ (¡Menos de 1,20€ la bolsa!)",
+  "tienda": "Amazon",
+  "precio_txt": "10,74€",
+  "precio_num": 10.74,
+  "descuento": null,
+  "componente": false,
+  "categoria": "Supermercado y alimentación",
+  "enlace": "https://www.chollometro.com/ofertas/pack-de-9-snacks-variados-lays-doritos-ruffles-cheetos-por-solo-1074eur-menos-de-120eur-la-bolsa-2011035",
+  "imagen": "https://static.chollometro.com/threads/raw/Rt9B8/2011035_1/re/150x150/qt/55/2011035_1.jpg",
+  "fecha_pub": "Tue, 22 Sep 2026 01:49:08 +0200",
+  "fuente": "Chollometro",
+  "primera_vez": "2026-09-22T03:17:17"
+ },
  "https://www.chollometro.com/ofertas/philips-afeitadora-cabeza-serie-7000-pro-2011033": {
   "id": "https://www.chollometro.com/ofertas/philips-afeitadora-cabeza-serie-7000-pro-2011033",
   "titulo": "Philips Afeitadora Cabeza Serie 7000 Pro",
@@ -7481,21 +7496,6 @@
   "enlace": "https://www.chollometro.com/ofertas/columbia-powder-pass-hybrid-hooded-jacket-chaqueta-acolchada-con-capucha-para-hombre-s-a-xxl-2004787",
   "imagen": "https://static.chollometro.com/threads/raw/8p3sM/2004787_1/re/150x150/qt/55/2004787_1.jpg",
   "fecha_pub": "Mon, 14 Sep 2026 22:31:05 +0200",
-  "fuente": "Chollometro",
-  "primera_vez": "2026-09-14T21:27:48"
- },
- "https://www.chollometro.com/ofertas/pack-de-2-x-1litro-listerine-clinical-solutions-whitening-enjuague-bucal-sin-alcohol-2004785": {
-  "id": "https://www.chollometro.com/ofertas/pack-de-2-x-1litro-listerine-clinical-solutions-whitening-enjuague-bucal-sin-alcohol-2004785",
-  "titulo": "PACK DE 2 x 1litro LISTERINE Clinical Solutions Whitening Enjuague Bucal SIN ALCOHOL",
-  "tienda": "Amazon",
-  "precio_txt": "9,89€",
-  "precio_num": 9.89,
-  "descuento": null,
-  "componente": false,
-  "categoria": "Salud y belleza",
-  "enlace": "https://www.chollometro.com/ofertas/pack-de-2-x-1litro-listerine-clinical-solutions-whitening-enjuague-bucal-sin-alcohol-2004785",
-  "imagen": "https://static.chollometro.com/threads/raw/iCL3E/2004785_1/re/150x150/qt/55/2004785_1.jpg",
-  "fecha_pub": "Mon, 14 Sep 2026 22:30:51 +0200",
   "fuente": "Chollometro",
   "primera_vez": "2026-09-14T21:27:48"
  }
