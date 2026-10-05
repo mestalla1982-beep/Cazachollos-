@@ -1,4 +1,19 @@
 {
+ "https://www.chollometro.com/ofertas/vans-mujer-range-brz-zapatillas-varias-tallas-2023070": {
+  "id": "https://www.chollometro.com/ofertas/vans-mujer-range-brz-zapatillas-varias-tallas-2023070",
+  "titulo": "Vans Mujer Range BRZ Zapatillas varias tallas",
+  "tienda": "Amazon",
+  "precio_txt": "46,31€",
+  "precio_num": 46.31,
+  "descuento": null,
+  "componente": false,
+  "categoria": "Moda y accesorios",
+  "enlace": "https://www.chollometro.com/ofertas/vans-mujer-range-brz-zapatillas-varias-tallas-2023070",
+  "imagen": "https://static.chollometro.com/threads/raw/cQtqI/2023070_1/re/150x150/qt/55/2023070_1.jpg",
+  "fecha_pub": "Mon, 05 Oct 2026 00:10:36 +0200",
+  "fuente": "Chollometro",
+  "primera_vez": "2026-10-05T04:01:12"
+ },
  "https://www.chollometro.com/ofertas/super-mario-bros-wonder-nintendo-switch-en-amazon-2023099": {
   "id": "https://www.chollometro.com/ofertas/super-mario-bros-wonder-nintendo-switch-en-amazon-2023099",
   "titulo": "Super Mario Bros. Wonder Nintendo Switch en Amazon",
@@ -7481,21 +7496,6 @@
   "enlace": "https://www.chollometro.com/ofertas/eglo-lampara-de-mesa-carpara-2015194",
   "imagen": "https://static.chollometro.com/threads/raw/Tr8vW/2015194_1/re/150x150/qt/55/2015194_1.jpg",
   "fecha_pub": "Sat, 26 Sep 2026 17:26:56 +0200",
-  "fuente": "Chollometro",
-  "primera_vez": "2026-09-26T15:45:07"
- },
- "https://www.chollometro.com/ofertas/razer-blackshark-v2-x-auriculares-71-50mm-35mm-2015193": {
-  "id": "https://www.chollometro.com/ofertas/razer-blackshark-v2-x-auriculares-71-50mm-35mm-2015193",
-  "titulo": "Razer BlackShark V2 X Auriculares Gaming 7.1 Verdes",
-  "tienda": "Amazon",
-  "precio_txt": "49,99€",
-  "precio_num": 49.99,
-  "descuento": null,
-  "componente": false,
-  "categoria": "Gaming",
-  "enlace": "https://www.chollometro.com/ofertas/razer-blackshark-v2-x-auriculares-71-50mm-35mm-2015193",
-  "imagen": "https://static.chollometro.com/threads/raw/D28wb/2015193_1/re/150x150/qt/55/2015193_1.jpg",
-  "fecha_pub": "Sat, 26 Sep 2026 17:26:49 +0200",
   "fuente": "Chollometro",
   "primera_vez": "2026-09-26T15:45:07"
  }
