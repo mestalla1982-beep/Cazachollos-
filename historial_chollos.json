@@ -1,4 +1,19 @@
 {
+ "https://www.chollometro.com/ofertas/pack-de-2-bombillas-inteligentes-e14-amazon-basics-multicolor-rgb-wi-fi-24ghz-funciona-con-alexa-sin-hub-2042686": {
+  "id": "https://www.chollometro.com/ofertas/pack-de-2-bombillas-inteligentes-e14-amazon-basics-multicolor-rgb-wi-fi-24ghz-funciona-con-alexa-sin-hub-2042686",
+  "titulo": "Pack de 2 Bombillas Inteligentes E14 Amazon Basics (Multicolor RGB, Wi-Fi 2.4GHz, Funciona con Alexa, Sin Hub)",
+  "tienda": "Amazon",
+  "precio_txt": "12,82€",
+  "precio_num": 12.82,
+  "descuento": null,
+  "componente": false,
+  "categoria": "Hogar, vivienda y oficina",
+  "enlace": "https://www.chollometro.com/ofertas/pack-de-2-bombillas-inteligentes-e14-amazon-basics-multicolor-rgb-wi-fi-24ghz-funciona-con-alexa-sin-hub-2042686",
+  "imagen": "https://static.chollometro.com/threads/raw/522GS/2042686_1/re/150x150/qt/55/2042686_1.jpg",
+  "fecha_pub": "Sun, 25 Oct 2026 00:56:23 +0200",
+  "fuente": "Chollometro",
+  "primera_vez": "2026-10-25T03:10:14"
+ },
  "https://www.chollometro.com/ofertas/chupa-chups-party-mix-2042680": {
   "id": "https://www.chollometro.com/ofertas/chupa-chups-party-mix-2042680",
   "titulo": "Chupa Chups Party Mix",
@@ -7481,21 +7496,6 @@
   "enlace": "https://www.chollometro.com/ofertas/2-x-magno-gel-de-ducha-classic-600ml-cremoso-y-agradable-unidad-223eur-2035403",
   "imagen": "https://static.chollometro.com/threads/raw/zdaen/2035403_1/re/150x150/qt/55/2035403_1.jpg",
   "fecha_pub": "Sat, 17 Oct 2026 18:34:50 +0200",
-  "fuente": "Chollometro",
-  "primera_vez": "2026-10-17T17:45:00"
- },
- "https://www.chollometro.com/ofertas/logitech-zone-wireless-2-es-auriculares-inalambricos-con-microfono-rosa-2035399": {
-  "id": "https://www.chollometro.com/ofertas/logitech-zone-wireless-2-es-auriculares-inalambricos-con-microfono-rosa-2035399",
-  "titulo": "Logitech Zone Wireless 2 ES - Auriculares Inalámbricos con micrófono Rosa",
-  "tienda": "Amazon",
-  "precio_txt": "87,13€",
-  "precio_num": 87.13,
-  "descuento": null,
-  "componente": false,
-  "categoria": "Electrónica",
-  "enlace": "https://www.chollometro.com/ofertas/logitech-zone-wireless-2-es-auriculares-inalambricos-con-microfono-rosa-2035399",
-  "imagen": "https://static.chollometro.com/threads/raw/aaWSz/2035399_1/re/150x150/qt/55/2035399_1.jpg",
-  "fecha_pub": "Sat, 17 Oct 2026 18:28:50 +0200",
   "fuente": "Chollometro",
   "primera_vez": "2026-10-17T17:45:00"
  }
